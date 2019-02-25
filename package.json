@@ -1,10 +1,12 @@
 {
     "name": "@dekproject/plugin-bootstrap",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Skeleton base for DEK plugins",
-    "main": "index.js",
+    "main": "./build/index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "mocha",
+        "sample": "npm run build && babel-node sample --presets env",
+        "build": "babel src -s -D -d build --presets env"
     },
     "repository": {
         "type": "git",
@@ -26,8 +28,5 @@
         "babel-preset-env": "^1.7.0",
         "dotenv": "^6.2.0",
         "mocha": "^6.0.1"
-    },
-    "dependencies": {
-        "@dekproject/scope": "^1.0.6"
     }
 }
